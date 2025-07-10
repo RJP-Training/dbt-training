@@ -6,7 +6,7 @@ semantic_models:
       semantic model for dim_customers
     model: ref('dim_customers')
     entities:
-      - name: customer
+      - name: cust
         expr: customer_id
         type: primary
     dimensions:
