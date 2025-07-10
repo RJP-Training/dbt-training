@@ -16,7 +16,7 @@ orders_items as (
 order_item_summary as (
 
     select 
-        order_id as order_key,
+        order_id,
         sum(gross_item_sales_amount) as gross_item_sales_amount,
         sum(item_discount_amount) as item_discount_amount,
         sum(item_tax_amount) as item_tax_amount,
@@ -29,9 +29,9 @@ final as (
 
     select 
 
-        o.order_id as order_key, 
+        o.order_id, 
         o.order_date,
-        o.customer_id as customer_key,
+        o.customer_id,
         o.status_code as order_status_code,
         o.priority_code as order_priority_code,
         o.clerk_name as order_clerk_name,
@@ -45,7 +45,7 @@ final as (
         orders o
         join
         order_item_summary s
-            on o.order_id = s.order_key
+            on o.order_id = s.order_id
 )
 select 
     f.*
