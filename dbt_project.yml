@@ -9,8 +9,6 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
-dbt-cloud:
-    project-id: 70471823486209
 
 vars:
   cid: 1000
@@ -49,7 +47,6 @@ models:
       +materialized: table
     intermediate:
       +materialized: table 
-      +schema: dbt_inter
     marts:
       +materialized: table 
       +transient: false
