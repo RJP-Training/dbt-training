@@ -1,1 +1,0 @@
-select * from Analytics.training.supplier_names
